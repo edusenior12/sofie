@@ -1,0 +1,81 @@
+.messagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 50%;
+    /* border: 2px solid rgb(203, 203, 203); */
+    padding: 10px;
+    /* background-color: #ff8e8e; */
+}
+
+.assistantResponse {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    /* border: 2px solid red; */
+}
+
+.responseAvatar {
+    display: flex;
+    /* border: 2px solid black; */
+}
+
+.avatarAssistant {
+    display: flex;
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    font-size: 16px;
+}
+
+.avatarUser {
+    display: flex;
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    background-color:  #5900ff;
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+}
+
+.responseMessage {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    /* border: 2px solid black; */
+    width: 85%;
+}
+
+.userInput {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    /* border: 1px solid blue; */
+}
+
+.userMessage {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #faeeff;
+    max-width: 60%;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* padding: 10px; */
+}

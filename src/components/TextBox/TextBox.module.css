@@ -1,0 +1,53 @@
+.textInputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    height: 90px;
+    width: 50%;
+    background-color: #f4f4f4;
+    /* border: 1px solid #ccc; */
+    border-radius: 40px;
+    padding: 40px;
+}
+
+.textInputContainerLeft {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+}
+
+.textInputContainerRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+    /* border: 2px solid red; */
+}
+
+.textInput {
+    height: 100%;
+    width: 100%;
+    border-width: 0px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+    outline: none;
+    /* border-color: #000000; */
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    color: white;
+    background-color: #5900ff;
+    cursor: pointer;
+}
