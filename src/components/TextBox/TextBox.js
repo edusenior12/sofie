@@ -1,14 +1,21 @@
 import React from 'react'
 import styles from './TextBox.module.css'
 import { BsFillSendFill } from "react-icons/bs";
+import { useLocation } from 'react-router';
 
 const TextBox = (props) => {
-    return (
-        <div className={styles.textInputContainer}>
 
-            <div className={styles.textInputContainerLeft}>
+    let { pathname } = useLocation();
+
+    console.log(pathname);
+
+    return (
+        <div className={styles.main}>
+
+            <div className={styles.textInputContainer}>
                 <input
                     type='text'
+                    name='prompt'
                     className={styles.textInput}
                     placeholder='Ask Sofie a question about this customer.'
                     value={props.question}
@@ -17,7 +24,7 @@ const TextBox = (props) => {
                 />
             </div>
 
-            <div className={styles.textInputContainerRight}>
+            <div className={styles.submitButtonContainer}>
                 <div 
                     className={styles.submitButton} 
                     onClick={props.handleSubmit}
@@ -25,6 +32,13 @@ const TextBox = (props) => {
                     <BsFillSendFill />
                 </div>
             </div>
+            
+            {pathname === '/assist' ? 
+                <div className={styles.createCaseButtonContainer} onClick={() => props.openModal(!props.modalState)}>
+                    <p>Create Case</p>
+                </div> :
+                null
+            }
 
         </div>
     )

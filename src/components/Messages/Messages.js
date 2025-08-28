@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './Messages.module.css'
+
 
 function formatLLMResponse(response) {
     // Replace line breaks with HTML <br> tags
@@ -26,19 +27,19 @@ const UserMessage = (props) => {
             {props.children}
         </div>
         <div className={styles.userAvatar}>
-                <div className={styles.avatarUser}>ES</div>
+            <div className={styles.avatarUser}>ES</div>
         </div>
     </div>
   )
 }
 
+
 const AssistantMessage = (props) => {
     const formattedResponse = formatLLMResponse(props.children)
-    console.log(formattedResponse)
     return (
         <div className={styles.assistantResponse}>
             <div className={styles.responseAvatar}>
-                <div className={styles.avatarAssistant}>S</div>
+                <div className={styles.avatarAssistant}>B</div>
             </div>
             <div className={styles.responseMessage} dangerouslySetInnerHTML={{ __html: formattedResponse }} >
                 {/* {props.children} */}
@@ -47,7 +48,14 @@ const AssistantMessage = (props) => {
     )
 }
 
+
 const Messages = (props) => {
+    const endRef = useRef(null);
+
+    useEffect(() => {
+        endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [props.messages])
+
     return (
         <div className={styles.messagesContainer}>
             {props.messages && props.messages.map((message, index) => (
@@ -55,8 +63,10 @@ const Messages = (props) => {
                 <UserMessage key={index}>{message.content}</UserMessage> : 
                 <AssistantMessage key={index}>{message.content}</AssistantMessage>
             ))}
+            <div ref={endRef} />
         </div>
     )
 }
+
 
 export default Messages
